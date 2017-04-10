@@ -22,11 +22,19 @@ app.controller("sideController", function($scope, $timeout, $mdSidenav, $mdDialo
 	    console.log(ev);
 	    originatorEv = ev;
     	$mdOpenMenu(ev);
-//    	$mdMenu.open(ev);
     };
 
     $scope.notificationsEnabled = true;
     $scope.toggleNotifications = function() {
     	$scope.notificationsEnabled = !$scope.notificationsEnabled;
     };
+
+    $scope.showList = function(item){
+        console.log($scope.list);
+        if ($scope.list == true) {
+            $scope.list = item;
+        }else{
+            $scope.list = item;
+        }
+    }
 });

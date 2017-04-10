@@ -1,18 +1,56 @@
 <div ng-controller="sideController" layout="column" style="height: 500px;" ng-cloak>
 	<section layout="row" flex>
 
-		<md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
-			<md-toolbar class="md-theme-indigo">
-				<h1 class="md-toolbar-tools">Menu</h1>
-			</md-toolbar>
-
-			<md-content layout-margin>
-				<p>
-					This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
-				</p>
-				<md-button ng-click="toggleLeft()" class="md-accent">
-					Close this Sidenav
+		<md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="2">
+			<md-toolbar class="md-theme-indigo secondary-button-padding">
+				<div class="md-toolbar-tools md-menu-toolbar">
+				<h2 class="md-toolbar-tools">Menu</h2>
+				<md-button class="md-secondary md-icon-button" ng-click="toggleLeft()">
+					<md-icon md-svg-src="img/icons/ic_navigate_before_white_24px.svg"></md-icon>
 				</md-button>
+				</div>
+			</md-toolbar>
+			<md-content>
+				<div layout-margin>
+					<img ng-src="img/angular-logo.svg" class="md-avatar" />
+					<p>
+						
+					</p>
+				</div>
+				<md-divider></md-divider>
+
+				<md-list>
+					<md-list-item ng-click="showList(1)">
+						<span><strong>Header Menu 1</strong></span>
+						<div class="md-secondary md-icon-button" >
+							<md-icon md-svg-src="img/icons/ic_keyboard_arrow_right_black_24px.svg"></md-icon>
+						</div>
+					</md-list-item>
+					<md-list ng-show="list == 1">
+						<md-list-item ng-click="null">
+							<span>menu1</span>
+						</md-list-item>
+					</md-list>
+					<md-divider></md-divider>
+
+					<md-list-item ng-click="showList(2)">
+						<span><strong>Header Menu 2</strong></span>
+						<div class="md-secondary md-icon-button" >
+							<md-icon md-svg-src="img/icons/ic_keyboard_arrow_right_black_24px.svg"></md-icon>
+						</div>
+					</md-list-item>
+					<md-list ng-show="list == 2">
+						<md-list-item ng-click="null">
+							<span>menu2</span>
+						</md-list-item>
+						<md-list-item ng-click="null">
+							<span>menu3</span>
+						</md-list-item>
+					</md-list>
+					<md-divider></md-divider>
+
+
+				</md-list>
 			</md-content>
 
 		</md-sidenav>
